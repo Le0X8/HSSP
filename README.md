@@ -5,6 +5,18 @@ Can hold up to 64 RiB = 65536 YiB = 4294967296 ZiB (insane amount of data).
 This file can hold 11.8 billion hours of 4k Video at 100 Mbit/s.
 
 ---
+## Why should you use HSSP?
+
+> [Functions](https://hssp.leox.dev/functions)
+
+|                   | HSSP                                                                    | ZIP                 | RAR                 | 7z                  |
+|-------------------|-------------------------------------------------------------------------|---------------------|---------------------|---------------------|
+| Max. Content Size | 64 RiB                                                                  | 4 GiB               | 8 EiB               | 16 EiB              |
+| Compression       | Hybrid                                                                  | LZW                 | ?                   | LZMA                |
+| Functions         | [Password encryption, Index file, ...](https://hssp.leox.dev/functions) | Password encryption | Password encryption | Password encryption |
+| Platforms         | Coming soon                                                             | Windows, Mac, Linux | Windows, Mac, Linux | Windows, Mac, Linux |
+
+---
 ## File Structure
 
 All data is low endian.

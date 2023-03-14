@@ -21,7 +21,7 @@ All data is low endian.
 
 ### Content
 
-The content is a list without separators, containing files.
+The content is a list without separators, containing files. It starts at byte 128.
 
 ### Content > File
 
@@ -43,7 +43,7 @@ The content is a list without separators, containing files.
 1. Firstly, ensure that bytes 12-60 are not filled with 0.
 2. Check if the given password is correct, by hashing the password wirh the SHA-256 algorithm two times.
 3. Fetch the iv from bytes 44-60.
-4. With the password hashed one time with SHA-256 and the iv, decrypt the content from byte 64 till the end of the file.
+4. With the password hashed one time with SHA-256 and the iv, decrypt the content from byte 128 till the end of the file.
 5. The original contents of the file are now the decrypted data from step 4 and the final deciphered bytes.
 
 ---

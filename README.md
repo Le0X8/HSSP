@@ -9,8 +9,8 @@ This file can hold 11.8 billion hours of 4k Video at 100 Mbit/s.
 
 All data is low endian.
 
-Starting byte | Size in Bytes | Content
----
-0 | 4 | UTF-8 string "HSSP".
-4 | 4 | MurmurHash3 (32 bit) of the file from byte 64 till end.
-8 | 4 | Contains a Uint32 with the number of the files inside the file.
+| Starting byte | Size in bytes | Content                                                                 |
+|:-------------:|:-------------:|-------------------------------------------------------------------------|
+|       0       |       4       | UTF-8 string "HSSP"                                                     |
+|       4       |       4       | MurmurHash3 (32 bit) checksum of the file content from byte 64 till end |
+|       8       |       4       | Uint32: number of files/folders included                                |

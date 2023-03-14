@@ -49,4 +49,4 @@ The content is a list without separators, containing files.
 ---
 ## Parsing & editing code examples
 
-- (Node.JS)[https://github.com/Le0X8/HSSP/tree/nodejs]
+- [Node.JS](https://github.com/Le0X8/HSSP/tree/nodejs)

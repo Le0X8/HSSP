@@ -65,7 +65,7 @@ class HSSP { // Can hold up to 64 RiB (65536 YiB, 4294967296 ZiB, ...) (insane a
             // 44 - 60
         };
         out.writeUint32LE(this.#idx, 60); // Index file number, 0 if not set | 4+60
-        var offs = 64; // Start
+        var offs = 128; // Start
         this.#files.forEach(file => {
             out.writeBigUint64LE(BigInt(file[1].byteLength), offs); // file size (up to 16 EiB!!!)
             out.writeUint16LE((new TextEncoder().encode(file[0])).byteLength, offs + 8); // name size
@@ -73,15 +73,15 @@ class HSSP { // Can hold up to 64 RiB (65536 YiB, 4294967296 ZiB, ...) (insane a
             file[1].copy(out, offs + 10 + (new TextEncoder().encode(file[0])).byteLength); // file
             offs += 10 + (new TextEncoder().encode(file[0])).byteLength + (new TextEncoder().encode(file[0])).byteLength + file[1].byteLength;
         });
-        const pack = out.subarray(64, size);
+        const pack = out.subarray(128, size);
         if (this.#pwd !== null) {
             const iv = crypto.randomBytes(16);
             const cipher = crypto.createCipheriv('aes-256-cbc', crypto.createHash('sha256').update(this.#pwd).digest(), iv);
             const encrypted = Buffer.concat([cipher.update(pack), cipher.final()]);
             iv.copy(out, 44);
-            encrypted.copy(out, 64);
+            encrypted.copy(out, 128);
             crypto.createHash('sha256').update(crypto.createHash('sha256').update(this.#pwd).digest()).digest().copy(out, 12);
-            const eOut = Buffer.concat([out.subarray(0, 64), encrypted]);
+            const eOut = Buffer.concat([out.subarray(0, 128), encrypted]);
             eOut.writeUint32LE(murmurhash.murmur3(encrypted.toString('utf8'), 0x31082007), 4);
             return eOut;
         };

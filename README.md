@@ -14,3 +14,5 @@ All data is low endian.
 |       0       |       4       | UTF-8 string "HSSP"                                                     |
 |       4       |       4       | MurmurHash3 (32 bit) checksum of the file content from byte 64 till end |
 |       8       |       4       | Uint32: number of files/folders included                                |
+
+to be continued...

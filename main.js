@@ -54,7 +54,7 @@ class HSSP { // Can hold up to 64 RiB (65536 YiB, 4294967296 ZiB, ...) (insane a
             size += 10 + (new TextEncoder().encode(file[0])).byteLength + (new TextEncoder().encode(file[0])).byteLength + file[1].byteLength; // (FileSize + NameLength) + FileName + File
         });
         const out = Buffer.alloc(size);
-        out.write('SFA\x00', 0, 'utf8'); // Magic value :) | 4+0
+        out.write('HSSP', 0, 'utf8'); // Magic value :) | 4+0
         out.writeUint32LE(this.#files.length, 8); // File count | 4+8
         for (var i = 3; i < 11; i++) {
             out.writeUint32LE(0, i * 4); // Password hash, if not set = 0 | 32+12

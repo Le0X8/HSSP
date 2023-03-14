@@ -26,15 +26,19 @@ The content is a list without separators, containing files.
 ### Content > File
 
 | Starting byte | Size in bytes | Content                                                                      |
-
 |:-------------:|:-------------:|------------------------------------------------------------------------------|
-
 |       0       |       8       | BigUint64 of the file byte length (=b)                                       |
-
 |       8       |       2       | Uint16 of the file name (UTF-8) byte length (=a)                             |
-
 |       10      |       a       | File name (UTF-8) (if starting with //, it will be declared as empty folder) |
-
 |     10 + a    |       b       | File content                                                                 |
 
-to be continued...
+
+
+                               
+
+
+
+
+
+
+

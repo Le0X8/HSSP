@@ -12,7 +12,7 @@ This file can hold 11.8 billion hours of 4k Video at 100 Mbit/s.
 |                   | HSSP                                                                    | ZIP                 | RAR                 | 7z                  |
 |-------------------|:-----------------------------------------------------------------------:|:-------------------:|:-------------------:|:-------------------:|
 | Max. Content Size | 64 RiB                                                                  | 4 GiB               | 8 EiB               | 16 EiB              |
-| Compression       | Hybrid                                                                  | LZW                 | ?                   | LZMA                |
+| Compression       | Coming soon                                                             | LZW                 | ?                   | LZMA                |
 | Functions         | [Password encryption, Index file, ...](https://hssp.leox.dev/functions) | Password encryption | Password encryption | Password encryption |
 | Platforms         | Coming soon                                                             | Windows, Mac, Linux | Windows, Mac, Linux | Windows, Mac, Linux |
 

@@ -1,3 +1,6 @@
+## Warning: The file structure will be changed soon! Do not create files until 3.0.0 release on NPM!!!
+---
+
 # HSSP - Huge Size Supporting Package
 
 Can hold up to 64 RiB = 65536 YiB = 4294967296 ZiB (insane amount of data).
